@@ -32,5 +32,7 @@ namespace BulkyBookWeb
 
             app.Run();
         }
+
+        // project based on https://www.youtube.com/watch?v=hZ1DASYd9rk
     }
 }
