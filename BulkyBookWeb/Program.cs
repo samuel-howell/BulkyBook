@@ -1,3 +1,6 @@
+using BulkyBookWeb.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace BulkyBookWeb
 {
     public class Program
@@ -8,6 +11,9 @@ namespace BulkyBookWeb
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer( //this ties in the connection string from appsettings and the applicationDbContext to the main program
+                builder.Configuration.GetConnectionString("DefaultConnection") // from DefaultConnection block in appsettings.json
+                )); 
 
             var app = builder.Build();
 
@@ -33,6 +39,6 @@ namespace BulkyBookWeb
             app.Run();
         }
 
-        // project based on https://www.youtube.com/watch?v=hZ1DASYd9rk most recent stop - 1:06:46
+        // project based on https://www.youtube.com/watch?v=hZ1DASYd9rk most recent stop - 1:31:00
     }
 }
