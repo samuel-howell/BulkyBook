@@ -1,0 +1,11 @@
+﻿@if (TempData["success"] != null)
+{
+    <h2>@TempData["success"]</h2>
+    // whatever is stored in temp data only stays there for one iteration (it will be gone on page reload)
+}
+
+@if (TempData["error"] != null)
+{
+    <h2>@TempData["error"]</h2>
+
+}

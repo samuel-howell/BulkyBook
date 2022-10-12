@@ -1,10 +1,10 @@
 ﻿@model Category // if you aren't passing anything inside controller params (like in Create), then you can use the model based on the data you are collecting on the page.
 
-<form method="post">
+<form method="post" asp-action="Edit">  <!-- will post to same action post method (Edit) by default, or you can explicitly declare using asp-action tag -->
     <div class="border p-3 mt-4">
         <div class="row pb-2">
             <h2 class="text-primary">
-                Create Category
+                Edit Category
                 <hr />
             </h2>
         </div>
@@ -23,7 +23,7 @@
 
         </div>
         <button type="submit" class="btn btn-primary" style="width:150px">
-            Create
+            Update
         </button>
         <a asp-controller="Category" asp-action="Index" class="btn btn-secondary" style="width:150px"> <!-- link btn to go back to previous page of category list-->
             Back to List
