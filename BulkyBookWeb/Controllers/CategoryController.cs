@@ -18,5 +18,21 @@ namespace BulkyBookWeb.Controllers
             IEnumerable<Category> objCategoryList = _db.Categories; // get the category table entries and assign to IEnumerable of type Category.
             return View(objCategoryList);
         }
+
+        // GET action method
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST action method
+        [HttpPost]
+        [ValidateAntiForgeryToken] // inside any forms it will automaticcally inject key that will be validated 
+        public IActionResult Create(Category obj)
+        {
+            _db.Categories.Add(obj); // add new category obj from form to to the Categories table in the database
+            _db.SaveChanges(); // save the database to "lock in" the new category obj
+            return RedirectToAction("Index"); // sends us back to index view (the view with the category list)
+        }
     }
 }

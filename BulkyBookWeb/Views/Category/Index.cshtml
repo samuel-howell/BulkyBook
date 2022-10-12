@@ -4,6 +4,24 @@
 }
 
 <h1>Index Category</h1>
+<div class="container p-3">
+     <div class="row pt-4">
+         <div class="col-6">
+             <h2 class="text-primary">
+                 Category List
+             </h2>
+         </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Category" asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-plus-lg"></i> <!-- add icon from bootstrap-->
+                &nbsp; <!-- add a space-->
+                Create New Category
+            </a>
+        </div>
+     </div>
+     <br />
+     <br /> 
+
 
 <table class = "table table-bordered table-striped" style="width: 100%" >
     <thead>
@@ -30,3 +48,4 @@
         }
     </tbody>
 </table>
+</div>
