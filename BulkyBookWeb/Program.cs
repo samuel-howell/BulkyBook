@@ -13,8 +13,8 @@ namespace BulkyBookWeb
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer( //this ties in the connection string from appsettings and the applicationDbContext to the main program
                 builder.Configuration.GetConnectionString("DefaultConnection") // from DefaultConnection block in appsettings.json
-                )); 
-
+                ));
+            //builder.Services.AddRazorPages().AddRazorRuntimeCompilation(); // allows runtime compilation on razor views. unecessary since newest version of hot reload was released. causes footer to break.
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -39,6 +39,6 @@ namespace BulkyBookWeb
             app.Run();
         }
 
-        // project based on https://www.youtube.com/watch?v=hZ1DASYd9rk most recent stop - 1:31:00
+        // project based on https://www.youtube.com/watch?v=hZ1DASYd9rk most recent stop - 1:54:55
     }
 }
